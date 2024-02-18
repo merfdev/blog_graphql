@@ -1,21 +1,11 @@
-import { gql, useQuery } from "@apollo/client";
-import Header from "./component/layout/Header";
-
-const QUERY = gql`
-  query {
-    authors {
-      name
-    }
-  }
-`;
+import HomePage from "./component/home/HomePage";
+import Layout from "./component/layout/Layout";
 
 function App() {
-  const { loading, error, data } = useQuery(QUERY);
-  console.log({ loading, error, data });
   return (
-    <>
-      <Header />
-    </>
+    <Layout>
+      <HomePage />
+    </Layout>
   );
 }
 
