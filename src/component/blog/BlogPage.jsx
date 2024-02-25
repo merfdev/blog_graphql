@@ -6,6 +6,7 @@ import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import sanitizeHtml from "sanitize-html";
 import CommentForm from "../comment/CommentForm";
+import Comments from "../comment/comments";
 
 function BlogPage() {
   const { slug } = useParams();
@@ -71,6 +72,9 @@ function BlogPage() {
         </Grid>
         <Grid item xs={12}>
           <CommentForm slug={slug} />
+        </Grid>
+        <Grid item xs={12}>
+          <Comments slug={slug} />
         </Grid>
       </Grid>
     </Container>

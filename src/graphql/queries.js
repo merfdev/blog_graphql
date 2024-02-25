@@ -54,6 +54,17 @@ const GET_AUTHOR_INFO = gql`
     }
   }
 `;
+const GET_POST_COMMENTS = gql`
+  query getPostComments($slug: String!) {
+    post(where: { slug: $slug }) {
+      comment {
+        name
+        id
+        text
+      }
+    }
+  }
+`;
 const GET_POST_INFO = gql`
   query getPost($slug: String!) {
     post(where: { slug: $slug }) {
@@ -76,4 +87,10 @@ const GET_POST_INFO = gql`
     }
   }
 `;
-export { GET_BLOGS_QUERY, GET_AUTHOR_QUERY, GET_AUTHOR_INFO, GET_POST_INFO };
+export {
+  GET_BLOGS_QUERY,
+  GET_AUTHOR_QUERY,
+  GET_AUTHOR_INFO,
+  GET_POST_INFO,
+  GET_POST_COMMENTS,
+};
