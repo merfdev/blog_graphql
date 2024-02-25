@@ -13,6 +13,7 @@ function BlogPage() {
   const { loading, error, data } = useQuery(GET_POST_INFO, {
     variables: { slug },
   });
+
   if (loading) return <Loader />;
   if (error) return <h1>Error...</h1>;
   const { post } = data;
@@ -69,7 +70,7 @@ function BlogPage() {
           ></div>
         </Grid>
         <Grid item xs={12}>
-          <CommentForm slug />
+          <CommentForm slug={slug} />
         </Grid>
       </Grid>
     </Container>
